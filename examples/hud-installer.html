@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style type="text/css">
+td, th { border: 1px solid #c3c3c3; padding: 0 3px 0 3px; }
+table { border-collapse: collapse; }
+img { max-width: 100%; }
+</style>
+<meta name="generator" content="ReText 7.2.3">
+<title>hud-installer</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<p><head> <link rel="icon" href="./favicon.ico" /> </head></p>
+<style>
+@import url("https://nyteowldave.neocities.org/style.css");
+</style>
+
+<style>
+#footer_input {
+    width : calc( 100vw - 100px ) !important;
+}
+</style>
+
+<style>
+body {
+    margin : 10ch 1.1ch;
+}
+</style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<hr>
+<h1>HUD Installer Example</h1>
+<hr>
+<p>This page demonstates the requirements for installing a
+<strong>HUD Editor</strong> package on demand.</p>
+<p>It requires a single function call. If you examine the HTML
+source code, you'll notice there is no <code>TEXTAREA</code> element. There
+is no <code>CSS</code> or <code>JS</code> support for the <strong>HUD Editor</strong>.</p>
+<p>All requirements are handled automatically by the 
+<strong>HUD Installer Package</strong>.</p>
+<p>The filename is <code>hud-installer.js</code>. This file is currently
+located in the <strong>Web Demo Gems</strong> folder.</p>
+<p>This package is requested by the <code>install.js</code> API Module, which
+is the <strong>Master Installer</strong>. It's a short script, comprised
+mostly of the list of installable packages.</p>
+<p>This list must be updated manually. The list is embedded within
+the <code>install.js</code> source file, which is stored at <code>Morpheus</code>,
+within the <code>std/api</code> folder.</p>
+<hr>
+<h1>Caveats</h1>
+<p>The package installer won't work in <code>ReText</code>. It requires a
+modern Browser Agent for proper functionality.</p>
+<h1>Further Reading</h1>
+<p>More details are located in the [Tick Tick Tool][tick-tick].</p>
+<hr>
+<h1>Requirements</h1>
+<hr>
+<h2>API Modules</h2>
+<pre><code class="language-hal">https://nyteowldave.github.io/std/api/gems/prolog-beta.js
+https://nyteowldave.github.io/std/api/gems/interpreter-lite.js
+https://nyteowldave.github.io/std/api/install.js
+</code></pre>
+<hr>
+<h2>Stylesheets</h2>
+<pre><code class="language-hal">https://nyteowldave.neocities.org/style.css
+</code></pre>
+<hr>
+<footer if="footer">
+  <input id="footer_input" onchange="perform( event )" />
+</footer>
+
+<header id="messages"></header>
+
+<script>
+   function message( s ) { message.textContent = ( s ); }
+</script>
+
+<hr>
+<blockquote>
+<p><a href="http://dave-omega/app/bluto/examples/hud-installer.html" title="Omega Edition">Omega</a>
+<a href="./../bluto-menu.html">Bluto Menu</a>
+<a href="./">File System</a></p>
+</blockquote>
+<hr>
+<script>
+;
+; iwm = Object.keys( window ).sort()
+;
+</script>
+
+<script>
+;
+; doc = document
+;
+</script>
+
+<script>
+;
+; doc . title
+= doc . querySelector( "H1" )
+. textContent
+;
+</script>
+
+<script>
+;
+; cls =()=> console.clear()
+; agn =()=> location.reload()
+;
+</script>
+
+<script>
+;
+; veer =( h )=> ( location.hostname = ( h ) )
+;
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script src="https://nyteowldave.github.io/std/api/gems/prolog-beta.js">
+</script>
+
+<script src="https://nyteowldave.github.io/std/api/gems/interpreter-lite.js">
+</script>
+
+<script src="https://nyteowldave.github.io/std/api/install.js">
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+
+function message( s ) {}
+
+function suggest( s ) {
+    footer_input.value = ( s );
+}
+
+addEventListener( "load", ( e ) => { 
+    suggest( "install('hud')" );
+} );
+
+</script>
+
+</body>
+</html>

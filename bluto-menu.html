@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style type="text/css">
+td, th { border: 1px solid #c3c3c3; padding: 0 3px 0 3px; }
+table { border-collapse: collapse; }
+img { max-width: 100%; }
+</style>
+<meta name="generator" content="ReText 7.2.3">
+<title>bluto-menu</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<p><head> <link rel="icon" href="./favicon.ico" /> </head></p>
+<style>
+@import url("https://nyteowldave.neocities.org/style.css");
+</style>
+
+<style>
+#footer_input {
+    width : calc( 100vw - 100px ) !important;
+}
+</style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<hr>
+<div center>
+  <img src="./favicon.ico" />
+</div>
+
+<h1>Bluto Menu</h1>
+<hr>
+<h1>Featured Pages</h1>
+<ul>
+<li><a href="./examples/hud-installer.html">HUD Installer Example</a></li>
+<li><a href="./icons/icons-view.html">Icon Viewer</a></li>
+</ul>
+<hr>
+<h1>Workspaces</h1>
+<ul>
+<li><a href="./api/">api</a></li>
+<li><a href="./dot/">dot</a></li>
+<li><a href="./examples/">examples</a></li>
+<li><a href="./icons/">icons</a></li>
+<li><a href="./notes/">notes</a></li>
+<li><a href="./style/">style</a></li>
+<li><a href="./templates/">templates</a></li>
+</ul>
+<hr>
+<blockquote>
+<p><a href="http://dave-omega/app/bluto/bluto-menu.html" title="Omega Edition">Omega</a>
+<a href="./">File System</a></p>
+</blockquote>
+<hr>
+<header id="messages"></header>
+
+<footer if="footer">
+  <input id="footer_input" onchange="perform( event )" />
+</footer>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+;
+; iwm = Object.keys( window ).sort()
+;
+</script>
+
+<script>
+;
+; doc = document
+;
+</script>
+
+<script>
+;
+; doc . title
+= doc . querySelector( "H1" )
+. textContent
+;
+</script>
+
+<script>
+;
+; cls =()=> console.clear()
+; agn =()=> location.reload()
+;
+</script>
+
+<script>
+;
+; veer =( h )=> ( location.hostname = ( h ) )
+;
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script src="https://nyteowldave.github.io/std/api/gems/prolog-beta.js">
+</script>
+
+<script src="https://nyteowldave.github.io/std/api/gems/interpreter-lite.js">
+</script>
+
+<script src="https://nyteowldave.github.io/std/api/install.js">
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+
+function suggest( s ) {
+    footer_input.value = ( s );
+}
+
+addEventListener( "load", ( e ) => { 
+    suggest( "install('hud')" );
+} );
+
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+</body>
+</html>

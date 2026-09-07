@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Bluto ~ Omega
+Exec=xdg-open http://dave-omega/app/bluto/bluto-menu.html
+Icon=/home/dave/Icons/logo/bluto.png
+Type=Application
+# bluto-omega.desktop
+
