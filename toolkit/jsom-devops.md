@@ -1,19 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<style type="text/css">
-td, th { border: 1px solid #c3c3c3; padding: 0 3px 0 3px; }
-table { border-collapse: collapse; }
-img { max-width: 100%; }
-</style>
-<meta name="generator" content="ReText 7.2.3">
-<title>hud-installer</title>
-<style type="text/css">
-</style>
-</head>
-<body>
-<p><head> <link rel="icon" href="./favicon.ico" /> </head></p>
+<head> <link rel="icon" href="./favicon.ico" /> </head>
+
 <style>
 @import url("https://nyteowldave.neocities.org/style.css");
 </style>
@@ -61,75 +47,79 @@ body {
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+[tick-tick]:
+<https://ticktick.com/webapp/#p/6a99f28e8f086b72edb5a98b/tasks>
+"Project Notes ~ Tick-Tick"
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<hr>
-<h1>HUD Installer Example</h1>
-<hr>
-<p>This page demonstates the requirements for installing a
-<strong>HUD Editor</strong> package on demand.</p>
-<p>It requires a single function call. If you examine the HTML
-source code, you'll notice there is no <code>TEXTAREA</code> element. There
-is no <code>CSS</code> or <code>JS</code> support for the <strong>HUD Editor</strong>.</p>
-<p>All requirements are handled automatically by the 
-<strong>HUD Installer Package</strong>.</p>
-<p>The filename is <code>hud-installer.js</code>. This file is currently
-located in the <strong>Web Demo Gems</strong> folder.</p>
-<p>This package is requested by the <code>install.js</code> API Module, which
-is the <strong>Master Installer</strong>. It's a short script, comprised
-mostly of the list of installable packages.</p>
-<p>This list must be updated manually. The list is embedded within
-the <code>install.js</code> source file, which is stored at <code>Morpheus</code>,
-within the <code>std/api</code> folder.</p>
-<hr>
-<h1>Further Reading</h1>
-<p>More details are located in the <a href="https://ticktick.com/webapp/#p/6a99f28e8f086b72edb5a98b/tasks" title="Project Notes ~ Tick-Tick">Tick Tick Tool</a>.</p>
-<hr>
-<h1>Requirements</h1>
-<hr>
-<h2>API Modules</h2>
-<pre><code class="language-hal">https://nyteowldave.github.io/std/api/gems/prolog-beta.js
+[me-omega]:
+<http://dave-omega/app/bluto/toolkit/jsom-devops.html>
+"Omega Edition"
+
+----------------------------------------------------------------
+
+# JSOM DevOps Tool
+
+----------------------------------------------------------------
+
+# Description
+
+- ( `pending` )
+
+----------------------------------------------------------------
+
+# Further Reading
+
+More details are located in the [Tick Tick Tool][tick-tick].
+
+----------------------------------------------------------------
+
+# Requirements
+
+----------------------------------------------------------------
+
+## API Modules
+
+```hal
+https://nyteowldave.github.io/std/api/gems/prolog-beta.js
 https://nyteowldave.github.io/std/api/gems/interpreter-lite.js
 https://nyteowldave.github.io/std/api/install.js
-</code></pre>
+```
+
 <!-- IMPORTANT : menu class is Required! -->
 <div center class="menu">
   <button onclick="copy_above_preview(event)">Copy</button>
 </div>
 
-<hr>
-<h2>Stylesheets</h2>
-<pre><code class="language-hal">https://nyteowldave.neocities.org/style.css
-</code></pre>
+----------------------------------------------------------------
+
+## Stylesheets
+
+```hal
+https://nyteowldave.neocities.org/style.css
+```
 <!-- IMPORTANT : menu class is Required! -->
 <div center class="menu">
   <button onclick="copy_above_preview(event)">Copy</button>
 </div>
 
-<hr>
+----------------------------------------------------------------
+
 <footer if="footer">
   <input id="footer_input" onchange="perform( event )" />
 </footer>
 
 <header id="messages"></header>
 
-<script id="message.js" group="MessageOps" status="working">
-   function message( s ) { messages.textContent = ( s ); }
-</script>
+----------------------------------------------------------------
 
-<script id="suggest.js" group="MessageOps" status="working">
-function suggest( s ) {
-    footer_input.value = ( s );
-}
-</script>
+> [Omega][me-omega]
+> [Bluto Menu](./../bluto-menu.html)
+> [File System](./)
 
-<hr>
-<blockquote>
-<p><a href="http://dave-omega/app/bluto/examples/hud-installer.html" title="Omega Edition">Omega</a>
-<a href="./../bluto-menu.html">Bluto Menu</a>
-<a href="./">File System</a></p>
-</blockquote>
-<hr>
+----------------------------------------------------------------
+
 <script id="iwm.js" group="Prolog" status="working">
 ;
 ; iwm = Object.keys( window ).sort()
@@ -172,6 +162,18 @@ function suggest( s ) {
 </script>
 
 <script src="https://nyteowldave.github.io/std/api/install.js">
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script id="message.js" group="MessageOps" status="working">
+   function message( s ) { messages.textContent = ( s ); }
+</script>
+
+<script id="suggest.js" group="MessageOps" status="working">
+function suggest( s ) {
+    footer_input.value = ( s );
+}
 </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -297,6 +299,7 @@ function node( type, id, cname, owner ) {
 }
 </script>
 
+
 <script id="node-flash.js" group="GideonOps" status="working">
 node.flash = function( o, cname, delay ) {
     cname = ( str( cname ) || "flashing" );
@@ -328,13 +331,43 @@ function jsom( attrib, rex, dash, ed ) {
         v = ( m );
     }
     const doc = jsom.compose( v, dash );
-    if ( ed === "+" ) { ed = ned(); }
+    if ( ed === "+" ) { ed = ned( gid( "sop" ) ); }
     if ( ed instanceof HTMLTextAreaElement ) {
         ed . value = ( doc );
         return ( ed );
     }
     return ( doc );
 }
+</script>
+
+<script id="jsom-status.js" group="GatherOps" status="untested">
+jsom.status = function( rex, dash="-", ed ) {
+    return jsom( "status", rex, dash, ed );
+};
+</script>
+
+<script id="jsom-group.js" group="GatherOps" status="untested">
+jsom.group = function( rex, dash="-", ed ) {
+    return jsom( "group", rex, dash, ed );
+};
+</script>
+
+<script id="jsom-id.js" group="GatherOps" status="untested">
+jsom.lang = function( rex, dash="-", ed ) {
+    return jsom( "id", rex, dash, ed );
+};
+</script>
+
+<script id="jsom-id.js" group="GatherOps" status="untested">
+jsom.name = function( rex, dash="-", ed ) {
+    return jsom( "name", rex, dash, ed );
+};
+</script>
+
+<script id="jsom-lang.js" group="GatherOps" status="untested">
+jsom.lang = function( rex, dash="-", ed ) {
+    return jsom( "lang", rex, dash, ed );
+};
 </script>
 
 <script id="jsom-compose.js" group="GatherOps" status="working">
@@ -393,21 +426,52 @@ ned.fieldset = function( caption, owner ) {
 }
 </script>
 
+<script id="ned-imports.js" group="ZedOps" status="untested">
+ned.imports = function( ed ) {
+    const m = all( "SCRIPT[src]" );
+    if ( ed === "*" ) { return ( m ); }
+    const v = ( m ).map( ( se ) => ( se.src ) );
+    if ( ed === "+" ) { ed = ned( gid( "sop" ) ); }
+    if ( ed instanceof HTMLTextAreaElement ) {
+        ed = value = ( v.join( "\n" ) );
+        return ( ed );
+    }
+    return ( v );
+};
+</script>
+
+<script id="ned-imports-macros.js" group="ZedOps" status="untested">
+ned.imports.macros = {
+  "+" : "Use or Create SOP Editor"
+, "*" : "Return SCRIPT Elements"
+};
+</script>
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script id="suggestions.js" group="DebugOps" name="Footer Suggestions" lang="javascript" status="untested">
+suggestions = [
+  "install('hud')"
+, "test_ghost_editor()"
+, "btn = one( 'BUTTON' ); node.flash( btn );"
+, "jsom( 'status', 'untested', 0, '+' )"
+, "jsom.status( 'working', 0, '+' )"
+, "jsom.group( 'GatherOps', 0, '+ )"
+, "jsom.name( 'Named Script', 0, '+' )"
+, "jsom.id( 'd', 0, '+' )"
+, "jsom.lang( 'javascript', 0, '+' )"
+, "// Test Copy Button"
+, "// ... "
+];
+</script>
 
 <script>
 ;
-; ( 0 ) && suggest( "install('hud')" )
-; ( 0 ) && suggest( "test_ghost_editor()" )
-; ( 0 ) && suggest( "btn = one( 'BUTTON' ); node.flash( btn );" )
-; ( 0 ) && suggest( 'jsom( "status", "untested", 0, "+" )' )
-; ( 1 ) && suggest( 'jsom( "status", "working", 0, "+" )' )
-; ( 0 ) && suggest( "// Test Copy Button" )
-; ( 0 ) && suggest( "// ... " )
+; ( _op = 0 )
+; ( _op > 0 ) ? suggest( suggestions[ _op ] )
+: suggest( suggestions[ 0 ] )
 ;
 </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-</body>
-</html>

@@ -30,6 +30,7 @@
 
 - [HUD Installer Example](./examples/hud-installer.html)
 - [Icon Viewer](./icons/icons-view.html)
+- [JSOM DevOps Tool](./toolkit/jsom-devops.html)
 
 ----------------------------------------------------------------
 
@@ -88,6 +89,10 @@ URL=http://dave-omega/app/bluto/bluto-menu.html
 <footer if="footer">
   <input id="footer_input" onchange="perform( event )" />
 </footer>
+
+<script>
+   function message( s ) { messages.textContent = ( s ); }
+</script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 

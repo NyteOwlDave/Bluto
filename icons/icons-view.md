@@ -19,6 +19,7 @@ img {
 img[sm] { width : 64px;  }
 img[md] { width : 96px;  }
 img[lg] { width : 120px; }
+img[split] { border: none; }
 </style>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -53,7 +54,7 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
-<div><br></div>
+<div center> <img split src="splitter-hz-blue.png" /> </div>
 
 ----------------------------------------------------------------
 
@@ -80,6 +81,10 @@ img[lg] { width : 120px; }
  <img sm src="page-reject.png" />
  <img sm src="page-starred.png" />
 </div>
+
+----------------------------------------------------------------
+
+<div center> <img split src="splitter-hz-blue.png" /> </div>
 
 ----------------------------------------------------------------
 
@@ -113,6 +118,10 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
+<div center> <img split src="splitter-hz-blue.png" /> </div>
+
+----------------------------------------------------------------
+
 # Media Control (3)
 
 | ID  | Group ID | Filename                   |
@@ -139,6 +148,10 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
+<div center> <img split src="splitter-hz-blue.png" /> </div>
+
+----------------------------------------------------------------
+
 # Shapes ( 4 )
 
 | ID  | Group ID | Filename                   |
@@ -159,6 +172,10 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
+<div center> <img split src="splitter-hz-blue.png" /> </div>
+
+----------------------------------------------------------------
+
 # Blanks ( 5 )
 
 | ID  | Group ID | Filename                   |
@@ -175,6 +192,10 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
+<div center> <img split src="splitter-hz-blue.png" /> </div>
+
+----------------------------------------------------------------
+
 # Buttons ( 6 )
 
 | ID  | Group ID | Filename                   |
@@ -184,8 +205,12 @@ img[lg] { width : 120px; }
 ----------------------------------------------------------------
 
 <div center>
- <img sm src="button-blank.png" />
+ <img md src="button-blank.png" />
 </div>
+
+----------------------------------------------------------------
+
+<div center> <img split src="splitter-hz-blue.png" /> </div>
 
 ----------------------------------------------------------------
 
@@ -207,6 +232,10 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
+<div center> <img split src="splitter-hz-blue.png" /> </div>
+
+----------------------------------------------------------------
+
 # System ( 8 )
 
 | ID  | Group ID | Filename                   |
@@ -220,6 +249,10 @@ img[lg] { width : 120px; }
  <img sm src="bluto.png" />
  <img sm src="jarvis.png" />
 </div>
+
+----------------------------------------------------------------
+
+<div center> <img split src="splitter-hz-blue.png" /> </div>
 
 ----------------------------------------------------------------
 
@@ -239,6 +272,10 @@ img[lg] { width : 120px; }
 
 ----------------------------------------------------------------
 
+<div center> <img split src="splitter-hz-blue.png" /> </div>
+
+----------------------------------------------------------------
+
 # Table Templates
 
 ```
@@ -252,6 +289,10 @@ img[lg] { width : 120px; }
 |    |                     |            |
 
 ```
+
+----------------------------------------------------------------
+
+<div center> <img split src="splitter-hz-blue.png" /> </div>
 
 ----------------------------------------------------------------
 
@@ -269,7 +310,7 @@ img[lg] { width : 120px; }
 <header id="messages"></header>
 
 <script>
-   function message( s ) { message.textContent = ( s ); }
+   function message( s ) { messages.textContent = ( s ); }
 </script>
 
 ----------------------------------------------------------------
@@ -335,15 +376,27 @@ img[lg] { width : 120px; }
 
 <script>
 
-function message( s ) {}
-
 function suggest( s ) {
     footer_input.value = ( s );
 }
 
-addEventListener( "load", ( e ) => { 
-    suggest( "install('hud')" );
-} );
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+
+function main( event ) {
+    try {
+        suggest( "install('hud')" );
+        message( "Hey, load the HUD!" );
+    } catch ( e ) {
+        console.error ( e );
+        alert ( e );
+    }
+}
+
+addEventListener( "load", main );
 
 </script>
 

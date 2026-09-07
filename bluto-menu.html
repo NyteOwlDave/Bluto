@@ -37,6 +37,7 @@ img { max-width: 100%; }
 <ul>
 <li><a href="./examples/hud-installer.html">HUD Installer Example</a></li>
 <li><a href="./icons/icons-view.html">Icon Viewer</a></li>
+<li><a href="./toolkit/jsom-devops.html">JSOM DevOps Tool</a></li>
 </ul>
 <hr>
 <h1>Workspaces</h1>
@@ -50,6 +51,33 @@ img { max-width: 100%; }
 <li><a href="./templates/">templates</a></li>
 </ul>
 <hr>
+<h1>Dot Rocket</h1>
+<pre contenteditable>
+
+&lt;script&gt;
+location = "http://dave-omega/app/bluto/";
+&lt;script&gt;
+
+</pre>
+
+<hr>
+<h1>Linux Shortcut</h1>
+<pre contenteditable>
+[Desktop Entry]
+Name=Bluto
+Exec=xdg-open http://dave-omega/app/bluto/bluto-menu.html
+Icon=/home/dave/Icons/logo/bluto.png
+Type=Application
+</pre>
+
+<hr>
+<h1>Windows Shortcut</h1>
+<pre contenteditable>
+[Windows Shortcut]
+URL=http://dave-omega/app/bluto/bluto-menu.html
+</pre>
+
+<hr>
 <blockquote>
 <p><a href="http://dave-omega/app/bluto/bluto-menu.html" title="Omega Edition">Omega</a>
 <a href="./">File System</a></p>
@@ -60,6 +88,10 @@ img { max-width: 100%; }
 <footer if="footer">
   <input id="footer_input" onchange="perform( event )" />
 </footer>
+
+<script>
+   function message( s ) { messages.textContent = ( s ); }
+</script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
