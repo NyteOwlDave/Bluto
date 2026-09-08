@@ -1,48 +1,7 @@
 <head> <link rel="icon" href="./favicon.ico" /> </head>
 
 <style>
-@import url("https://nyteowldave.neocities.org/style.css");
-</style>
-
-<style>
-.ghost {
-    position : fixed;
-    left     : -2000px;
-    width    : 1px;
-    height   : 1px;
-    opacity  : 0;
-}
-</style>
-
-<style>
-.flashing {
-    animation : linear 0.42s flash forwards;
-}
-@keyframes flash {
-    from {
-        transform        : scale( 1.2 );
-        opacity          : 0.2;
-        background-color : gold;
-        color            : midnight-blue;
-        box-shadow       : 0px 0px 2.4ch black;
-    }
-    to {
-        transform : scale( 1.0 );
-        opacity   : 1.0;
-    }
-}
-</style>
-
-<style>
-body {
-    margin : 10ch 1.1ch 42vh 1.1ch;
-}
-</style>
-
-<style>
-#footer_input {
-    width : calc( 100vw - 100px ) !important;
-}
+@import url("./../style/jsom-devops.css");
 </style>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -60,6 +19,10 @@ body {
 ----------------------------------------------------------------
 
 # JSOM DevOps Tool
+
+> [Omega][me-omega]
+> [Bluto Menu](./../bluto-menu.html)
+> [File System](./)
 
 ----------------------------------------------------------------
 
@@ -98,10 +61,20 @@ https://nyteowldave.github.io/std/api/install.js
 
 ```hal
 https://nyteowldave.neocities.org/style.css
+http://dave-omega/app/bluto/style/jsom-devops.css
 ```
 <!-- IMPORTANT : menu class is Required! -->
 <div center class="menu">
   <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+----------------------------------------------------------------
+
+# Command Suggestions
+
+<div center>
+  <select id="suggestion_droplist"></select>
+  <button onclick="try_suggestion(event)">Try</button>
 </div>
 
 ----------------------------------------------------------------
@@ -111,12 +84,6 @@ https://nyteowldave.neocities.org/style.css
 </footer>
 
 <header id="messages"></header>
-
-----------------------------------------------------------------
-
-> [Omega][me-omega]
-> [Bluto Menu](./../bluto-menu.html)
-> [File System](./)
 
 ----------------------------------------------------------------
 
@@ -166,82 +133,17 @@ https://nyteowldave.neocities.org/style.css
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<script id="message.js" group="MessageOps" status="working">
-   function message( s ) { messages.textContent = ( s ); }
-</script>
-
-<script id="suggest.js" group="MessageOps" status="working">
-function suggest( s ) {
-    footer_input.value = ( s );
-}
-</script>
+<script src="./../api/jsom-combo-api.js"></script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<script id="locate-above-sibling.js" group="GideonOps" status="working">
-function locate_above_sibling( type, sender ) {
-    if ( sender instanceof Event ) {
-        sender = sender.target;
-    }
-    let ge = sender;
-    if ( ge.parentElement.classList.contains( "menu" ) ) {
-        ge = ge.parentElement;
-    }
-    type = str( type );
-    if (! type ) {
-        throw new TypeError(
-            "Expected an Element Node Type"
-        );
-    }
-    const match  =()=> ( (  ge ) && ( ge.nodeName === type   ) );
-    const failed =()=> ( (! ge ) || ( ge.nodeName === "BODY" ) );
-    while (! match( ge ) ) {
-        if ( failed() ) {
-            console.warn( "Unable to locate PRE element" );
-            return ( null );
-        }
-        ge = ge.previousElementSibling;
-    }
-    return ( ge );
-}
-</script>
-
-<script id="locate-above-preview.js" group="GideonOps" status="working">
-function locate_above_preview( sender ) {
-    return locate_above_sibling( "PRE", sender );
-}
-</script>
-
-<script id="copy-above-preview.js" group="GideonOps" status="working">
-function copy_above_preview( sender ) {
+<script id="try-suggestion.js" group="AppUI" lang="javascript" status="working">
+function try_suggestion( event ) {
     try {
-        const vw = locate_above_preview( sender );
-        if (! vw ) {
-            throw new Error( "No prior PRE element was found" );
-        }
-        node.flash( vw );
-        write_clipboard( vw.innerText );
-        // alert( vw.nodeName );
-    } catch ( e ) {
-        alert ( e );
-        throw ( e );
-    }
-}
-</script>
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<script id="write-clipboard.js" group="ClipboardOps" status="working">
-function write_clipboard( s ) {
-    try {
-        const old = doc.activeElement;
-        const ed = get_ghost_editor();
-        ed.value = ( s );
-        ed.select();
-        ed.focus();
-        doc.execCommand( "copy" );
-        if ( old ) { old.focus(); }
-        message( `Wrote item to clipboard` );
+        const ge = suggestion_droplist;
+        const js = ( ge.value );
+        if (! js ) { return; }
+        suggest( js );
     } catch ( e ) {
         message( e.message );
         console.error( e );
@@ -249,26 +151,19 @@ function write_clipboard( s ) {
 }
 </script>
 
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<script id="get-ghost-editor.js" group="GideonOps" status="working">
-function get_ghost_editor() {
-    const id = "ghost_editor";
-    const ed = gid( id );
-    if ( ed ) { return ( ed ); }
-    const cname = "ghost";
-    const owner = ( doc . body );
-    return (
-        node( "TEXTAREA", id, cname, owner )
-    );
-}
-</script>
-
-<script id="test-ghost-editor.js" group="GideonOps" status="working">
-function test_ghost_editor() {
+<script id="init-suggestion-droplist.js" group="AppUI" lang="javascript" status="working">
+function init_suggestion_droplist() {
     try {
-        const ed = get_ghost_editor();
-        alert( ed.nodeName );
+        const ge = suggestion_droplist;
+        ge . innerHTML = "";
+        const add =( js )=> {
+            const ce = elx( "OPTION" );
+            ge . appendChild( ce );
+            ce . textContent = (
+                ce . value = ( js )
+            );
+        };
+        suggestions.forEach( add );
     } catch ( e ) {
         message( e.message );
         console.error( e );
@@ -276,175 +171,8 @@ function test_ghost_editor() {
 }
 </script>
 
-<script id="node.js" group="GideonOps" status="working">
-function node( type, id, cname, owner ) {
-    const ge = elx( str( type ) );
-    if ( id = str( id ) ) {
-        ge . id = ( id );
-    }
-    if ( cname = str( cname ) ) {
-        ( ge )
-        . classList
-        . add ( cname );
-    }
-    if ( owner instanceof HTMLElement ) {
-        owner . appendChild( ge );
-    } else if ( "undefined" !== typeof owner ) {
-        console.warn( { owner } );
-        throw new TypeError(
-            "Expected a Gadget Reference"
-        );
-    }
-    return ( ge );
-}
-</script>
-
-
-<script id="node-flash.js" group="GideonOps" status="working">
-node.flash = function( o, cname, delay ) {
-    cname = ( str( cname ) || "flashing" );
-    delay = ( parseInt( delay ) || 800 );
-    if ( delay < 1 ) { return; }
-    o = ( o || document.activeElement );
-    const cl = o.classList;
-    const off =()=> { cl.remove( cname ); }
-    cl.add( cname );
-    setTimeout( off, delay );
-};
-</script>
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<script id="jsom.js" group="GatherOps" status="working">
-function jsom( attrib, rex, dash, ed ) {
-    ed = ned( ed );
-    attrib = ( str( attrib ) || "group" );
-    const artie =( se )=> ( se.getAttribute( attrib ) );
-    const q = ( `SCRIPT[${attrib}]` );
-    const m = all( q );
-    let v;
-    if ( rex = str( rex ) ) {
-        rex = new RegExp( rex );
-        const match =( se )=> ( rex.test( artie( se ) ) );
-        v = ( ( m ).filter( match ) );
-    } else {
-        v = ( m );
-    }
-    const doc = jsom.compose( v, dash );
-    if ( ed === "+" ) { ed = ned( gid( "sop" ) ); }
-    if ( ed instanceof HTMLTextAreaElement ) {
-        ed . value = ( doc );
-        return ( ed );
-    }
-    return ( doc );
-}
-</script>
-
-<script id="jsom-status.js" group="GatherOps" status="untested">
-jsom.status = function( rex, dash="-", ed ) {
-    return jsom( "status", rex, dash, ed );
-};
-</script>
-
-<script id="jsom-group.js" group="GatherOps" status="untested">
-jsom.group = function( rex, dash="-", ed ) {
-    return jsom( "group", rex, dash, ed );
-};
-</script>
-
-<script id="jsom-id.js" group="GatherOps" status="untested">
-jsom.lang = function( rex, dash="-", ed ) {
-    return jsom( "id", rex, dash, ed );
-};
-</script>
-
-<script id="jsom-id.js" group="GatherOps" status="untested">
-jsom.name = function( rex, dash="-", ed ) {
-    return jsom( "name", rex, dash, ed );
-};
-</script>
-
-<script id="jsom-lang.js" group="GatherOps" status="untested">
-jsom.lang = function( rex, dash="-", ed ) {
-    return jsom( "lang", rex, dash, ed );
-};
-</script>
-
-<script id="jsom-compose.js" group="GatherOps" status="working">
-jsom.compose = function( scripts, dash="-" ) {
-    dash = ( str( dash ) || "-" );
-    const line = String( dash ).repeat( 62 );
-    const sep = [ "\n|", "|\n" ].join( line );
-    const lines = (
-        ( scripts )
-        . map( ( se )=> ( se.innerText ) )
-    );
-    return lines.join( sep );
-}
-</script>
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<script id="ned.js" group="ZedOps" status="working">
-function ned( ed ) {
-    ed = (
-        ( ed )
-        || gid( "sop" )
-        || gid( "sce" )
-        || gid( "sip" )
-    );
-    if (! ed ) {
-        const owner = ned.section();
-        ed = node(
-            "TEXTAREA", "sop", "siox", owner
-        );
-    }
-    return ( ed );
-}
-</script>
-
-<script id="ned-section.js" group="ZedOps" status="working">
-ned.section = function() {
-    let section = (
-           gid( "editor_section" )
-        || gid( "editor-section" )
-    );
-    if ( section ) { return ( section ); }
-    const fieldset = ned.fieldset( "Editors" );
-    return node( "SECTION", "editor_section", 0, fieldset );
-}
-</script>
-
-<script id="ned-fieldset.js" group="ZedOps" status="working">
-ned.fieldset = function( caption, owner ) {
-    owner = ( owner || document.body );
-    caption = ( str( caption ) || "New Group" );
-    const fieldset = node( "FIELDSET", 0, 0, owner    );
-    const legend   = node( "LEGEND"  , 0, 0, fieldset );
-    legend.textContent = ( caption );
-    return ( fieldset );
-}
-</script>
-
-<script id="ned-imports.js" group="ZedOps" status="untested">
-ned.imports = function( ed ) {
-    const m = all( "SCRIPT[src]" );
-    if ( ed === "*" ) { return ( m ); }
-    const v = ( m ).map( ( se ) => ( se.src ) );
-    if ( ed === "+" ) { ed = ned( gid( "sop" ) ); }
-    if ( ed instanceof HTMLTextAreaElement ) {
-        ed = value = ( v.join( "\n" ) );
-        return ( ed );
-    }
-    return ( v );
-};
-</script>
-
-<script id="ned-imports-macros.js" group="ZedOps" status="untested">
-ned.imports.macros = {
-  "+" : "Use or Create SOP Editor"
-, "*" : "Return SCRIPT Elements"
-};
+<script id="page-load.js" group="EventOps" lang="javascript" status="working">
+addEventListener( "load", init_suggestion_droplist );
 </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -460,8 +188,7 @@ suggestions = [
 , "jsom.name( 'Named Script', 0, '+' )"
 , "jsom.id( 'd', 0, '+' )"
 , "jsom.lang( 'javascript', 0, '+' )"
-, "// Test Copy Button"
-, "// ... "
+, "ned.fieldset( 'New Fieldset Gadget' )"
 ];
 </script>
 
