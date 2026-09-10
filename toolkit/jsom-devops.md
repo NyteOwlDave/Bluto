@@ -257,6 +257,9 @@ suggestions = [
 , "jsom.lang( 'javascript', 0, '+' )"
 , "ned.fieldset( 'New Fieldset Gadget' )"
 , "message.hints()"
+, "populate_list(dir())"
+, "populate_droplist(dir())"
+, "populate_droplist(seeker('s'))"
 ];
 </script>
 
