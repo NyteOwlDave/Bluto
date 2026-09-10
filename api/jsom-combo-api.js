@@ -473,7 +473,7 @@ function pcl( o, sep="\n" ) {
     );
 };
 
-pcl.prep( o, sep="\n" ) {
+pcl.prep = function( o, sep="\n" ) {
     if ( o instanceof Object ) {
         if ( Array.isArray( o ) ) {
             return ( o ).map( str );
@@ -534,7 +534,7 @@ function populate_list( items, owner ) {
         const ce = elx( "LI" );
         owner.appendChild( ce );
         ce . textContent = (
-            ce . value = str( s );
+            ce . value = str( s )
         );
     };
     owner . innerHTML = "";
@@ -559,7 +559,7 @@ populate_list.section = function() {
 function populate_droplist( items, owner ) {
     const ops = populate_droplist;
     if (! gad( owner ) ) {
-        owner = elx( SELECT" );
+        owner = elx( "SELECT" );
     }
     let parent = ( owner.parentElement );
     if (! parent ) {
@@ -570,7 +570,7 @@ function populate_droplist( items, owner ) {
         const ce = elx( "OPTION" );
         owner.appendChild( ce );
         ce . textContent = (
-            ce . value = str( s );
+            ce . value = str( s )
         );
     };
     owner . innerHTML = "";

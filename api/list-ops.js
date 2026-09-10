@@ -18,7 +18,7 @@ function pcl( o, sep="\n" ) {
     );
 };
 
-pcl.prep( o, sep="\n" ) {
+pcl.prep = function( o, sep="\n" ) {
     if ( o instanceof Object ) {
         if ( Array.isArray( o ) ) {
             return ( o ).map( str );
