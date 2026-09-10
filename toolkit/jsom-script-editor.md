@@ -31,6 +31,7 @@ td input {
 # JSOM Script Editor
 
 > [Omega][me-omega]
+> [JSOM DevOps](./jsom-devops.html)
 > [File System](./)
 
 ----------------------------------------------------------------

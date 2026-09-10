@@ -102,6 +102,41 @@ http://dave-omega/app/bluto/style/jsom-devops.css
 
 ----------------------------------------------------------------
 
+# Module Groups
+
+Individual embedded __Modules__ (`SCRIPT` elements) are grouped
+by purpose or domain of concern.
+
+The JSON Combo API has been segmented according to these
+group rules.
+
+Here's a list of the Group Names and the associate File Names.
+Be aware that this individual files are duplicate code. The
+Combo API is considered the official code base. All smaller
+files should be kept consistent with this file.
+
+----------------------------------------------------------------
+
+| File Name        | Group Name | Description |
+|------------------|------------|----------------------|
+| copy-ops.js      | CopyOps    | Copy Buttons         |
+| gather-ops.js    | GatherOps  | Script Modules       |
+| gideon-ops.js    | GideonOps  | UI Gadgets           |
+| list-ops.js      | ListOps    | List Gadgets         |
+| message-ops.js   | MessageOps | Message Reporting    |
+| zed-ops.js       | ZedOps     | Text Editor Gadgets  |
+
+----------------------------------------------------------------
+
+## Related Modules
+
+| File Name         | Group Name | Description |
+|-------------------|------------|----------------------|
+| jsom-combo-api.js | JsomOps    | All Modules Combined |
+| copy-ops-todo.js  | CopyOps    | Unfinished Code      |
+
+----------------------------------------------------------------
+
 # Command Suggestions
 
 <div center>
