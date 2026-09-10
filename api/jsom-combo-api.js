@@ -452,6 +452,8 @@ function write_clipboard( s ) {
 
 ;
 ; console.log( `Loaded "jsom-combo-api.js" API Module` )
+; console.info( `REMINDER : Integrate "enhance_hud()"` )
+; console.info( `SEE : RT Sandbox @ Omega Jarvis Desktop"` )
 ;
 
 
