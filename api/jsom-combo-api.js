@@ -581,8 +581,8 @@ function populate_droplist( items, owner ) {
 
 populate_droplist.section = function() {
     let section = (
-           gid( "list_section" )
-        || gid( "list-section" )
+           gid( "droplist_section" )
+        || gid( "droplist-section" )
     );
     if (! section ) {
         section = elx( "SECTION" );
