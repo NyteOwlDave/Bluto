@@ -22,13 +22,45 @@
 
 > [Omega][me-omega]
 > [Bluto Menu](./../bluto-menu.html)
+
+> [JSOM Script Editor](./jsom-script-editor.html)
+
 > [File System](./)
 
 ----------------------------------------------------------------
 
 # Description
 
-- ( `pending` )
+A spelunker and much more. The __JSOM Combo API__ contains code
+for considering embedded __Scripts__ as <i>dynamically</i>
+modifiable "working assets". IOW ~ Unfinished and evolving.
+
+It's also a __PMS To-Do List__ of sorts. Each `SCRIPT` element
+may have zero or more recognized __attributes__ that the system
+can detect and even modify.
+
+### These include:
+
+- id
+- title
+- type
+- name
+- group
+- lang
+- status
+- tikey
+- tidate
+
+Be aware that additional attributes are always possible, however
+these are ignored by most of the API logic.
+
+One crucial attribute not mentioned is `src`. This attribute
+distinguishes __IMPORTED__ from __EMBEDDED__ script modules.
+
+Another attribute I've used commonly in the past is `cdn`.
+This is used as an alternative to `src`, where the script's
+load is deferred or even optional. The address is known, but
+to import, the `cdn` address is copied to `src` at run time.
 
 ----------------------------------------------------------------
 

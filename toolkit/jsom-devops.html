@@ -26,14 +26,38 @@ img { max-width: 100%; }
 <h1>JSOM DevOps Tool</h1>
 <blockquote>
 <p><a href="http://dave-omega/app/bluto/toolkit/jsom-devops.html" title="Omega Edition">Omega</a>
-<a href="./../bluto-menu.html">Bluto Menu</a>
-<a href="./">File System</a></p>
+<a href="./../bluto-menu.html">Bluto Menu</a></p>
+<p><a href="./jsom-script-editor.html">JSOM Script Editor</a></p>
+<p><a href="./">File System</a></p>
 </blockquote>
 <hr>
 <h1>Description</h1>
+<p>A spelunker and much more. The <strong>JSOM Combo API</strong> contains code
+for considering embedded <strong>Scripts</strong> as <i>dynamically</i>
+modifiable "working assets". IOW ~ Unfinished and evolving.</p>
+<p>It's also a <strong>PMS To-Do List</strong> of sorts. Each <code>SCRIPT</code> element
+may have zero or more recognized <strong>attributes</strong> that the system
+can detect and even modify.</p>
+<h3>These include:</h3>
 <ul>
-<li>( <code>pending</code> )</li>
+<li>id</li>
+<li>title</li>
+<li>type</li>
+<li>name</li>
+<li>group</li>
+<li>lang</li>
+<li>status</li>
+<li>tikey</li>
+<li>tidate</li>
 </ul>
+<p>Be aware that additional attributes are always possible, however
+these are ignored by most of the API logic.</p>
+<p>One crucial attribute not mentioned is <code>src</code>. This attribute
+distinguishes <strong>IMPORTED</strong> from <strong>EMBEDDED</strong> script modules.</p>
+<p>Another attribute I've used commonly in the past is <code>cdn</code>.
+This is used as an alternative to <code>src</code>, where the script's
+load is deferred or even optional. The address is known, but
+to import, the <code>cdn</code> address is copied to <code>src</code> at run time.</p>
 <hr>
 <h1>Further Reading</h1>
 <p>More details are located in the <a href="https://ticktick.com/webapp/#p/6a99f28e8f086b72edb5a98b/tasks" title="Project Notes ~ Tick-Tick">Tick Tick Tool</a>.</p>

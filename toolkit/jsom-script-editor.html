@@ -88,6 +88,10 @@ td input {
 <td>code</td>
 <td><textarea id="code_editor"></textarea></td>
 </tr>
+<tr>
+<td>memo</td>
+<td><textarea id="memo_editor"></textarea></td>
+</tr>
 </tbody>
 </table>
 <hr>
@@ -168,51 +172,56 @@ td input {
 <tbody>
 <tr>
 <td><code>❎</code></td>
-<td>Show Action Key</td>
+<td>Show Actions Key</td>
 <td><code>alert( actions.key );</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
+<td>Generate Details</td>
+<td><code>generate.details();</code></td>
+</tr>
+<tr>
+<td><code>✅</code></td>
 <td>Generate ID</td>
 <td><code>generate.id();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate Title</td>
 <td><code>generate.title();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate Name Tag</td>
 <td><code>generate.nametag();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate Group</td>
 <td><code>generate.group();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate Language</td>
 <td><code>generate.language();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate Status</td>
 <td><code>generate.status();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate TiKey</td>
 <td><code>generate.tikey();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate TiDate</td>
 <td><code>generate.tidate();</code></td>
 </tr>
 <tr>
-<td><code>❎</code></td>
+<td><code>✅</code></td>
 <td>Generate Function Prototype</td>
 <td><code>generate.fnproto();</code></td>
 </tr>
@@ -460,7 +469,7 @@ ops.modules = [];
 
 // Schema = [ action, title ]
 ops.index = [
-  [ 'alert( action.key )'  , 'Show Action Key'    ]
+  [ 'alert( actions.key )' , 'Show Actions Key'   ]
 , [ "generate.details();"  , "Generate Details"   ]
 , [ "generate.id();"       , "Generate ID"        ]
 , [ "generate.title();"    , "Generate Title"     ]
@@ -480,7 +489,7 @@ man.details = function() {
     md . title    = ( document.title );
     md . origin   = ( location.href );
     md . version  = ( "1.0" );
-    md . revision = ( "0.0" );
+    md . revision = ( "0.1" );
     md . when     = ( new Date() ).toLocaleString();
     md . agent    = ( navigator.userAgent );
     md . tikey    = ( "3eb3b1d6-e56e-43b2-94f0-453012d39706" );
@@ -588,6 +597,7 @@ const fields = [
 , [ "tikey"    , tikey_input     ]
 , [ "tidate"   , tidate_input    ]
 , [ "code"     , code_editor     ]
+, [ "memo"     , memo_editor     ]
 , [ "actions"  , action_droplist ]
 , [ "action"   , action_input    ]
 , [ "param1"   , param1_input    ]
@@ -658,6 +668,16 @@ function nid( id, sep="-" ) {
     return [ "id", a, b ].join( sep );
 }
 
+function tigg() {
+    console.warn( "TODO ~ Finish tigg()" );
+    return "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+}
+
+function cooldate( dt ) {
+    console.warn( "TODO ~ Finish cooldate()" );
+    return "2026-MMM-DD";
+}
+
 function _todo() {
     alert( "This feature is incomplete" );
 };
@@ -702,11 +722,11 @@ generate.language = function() {
 };
 
 generate.tidate = function() {
-    tidate_input.value = "2026-MMM-DD"
+    tidate_input.value = cooldate();
 };
 
 generate.tikey = function() {
-    tikey_input.value = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+    tikey_input.value = tigg();
 };
 
 generate.fnproto  = function() {

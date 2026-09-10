@@ -23,16 +23,27 @@
 
 ----------------------------------------------------------------
 
+# [Bluto Providers](http://tiny.cc/daves-notes)
+
+> [Omega](http://dave-omega/app/bluto/bluto-menu.html)
+> [Tower](http://dave-tower/app/bluto/bluto-menu.html)
+
+----------------------------------------------------------------
+
+<header id="messages"></header>
+
+<footer id="footer">
+  <input id="footer_input" onchange="perform(event)" />
+</footer>
+
+----------------------------------------------------------------
+
 <script>
-;
 ; iwm = Object.keys( window ).sort()
-;
 </script>
 
 <script>
-;
 ; doc = document
-;
 </script>
 
 <script>
@@ -44,25 +55,13 @@
 </script>
 
 <script>
-;
 ; cls =()=> console.clear()
 ; agn =()=> location.reload()
-;
 </script>
 
 <script>
-;
 ; veer =( h )=> ( location.hostname = ( h ) )
-;
 </script>
-
-----------------------------------------------------------------
-
-<header id="messages"></header>
-
-<footer if="footer">
-  <input id="footer_input" onchange="perform( event )" />
-</footer>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
@@ -80,13 +79,26 @@
 <script>
 
 function suggest( s ) {
-    footer_input.value = ( s );
+	const i = parseInt( s );
+	if ( isFinite( i ) ) {
+		const t = str( suggestions[ i ] );
+		s = ( t || s );
+	}
+    footer_input.value = str( s );
 }
 
-addEventListener( "load", ( e ) => { 
-    suggest( "install('hud')" );
-} );
+addEventListener(
+  "load"
+, ( e ) => { suggest( 0 ); }
+);
 
 </script>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+suggestions = [
+  "install('hud')"
+];
+</script>
 

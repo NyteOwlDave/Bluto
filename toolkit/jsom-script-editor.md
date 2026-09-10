@@ -48,7 +48,7 @@ td input {
 | tikey     | <input id="tikey_input" />             |
 | tidate    | <input id="tidate_input" />            |
 | code      | <textarea id="code_editor"></textarea> |
-
+| memo      | <textarea id="memo_editor"></textarea> |
 
 ----------------------------------------------------------------
 
@@ -93,16 +93,17 @@ td input {
 
 | `✅` | Title             | Action |
 |------|-------------------|---------------------------------|
-| `❎` | Show Action Key   | `alert( actions.key );`         |
-| `❎` | Generate ID       | `generate.id();`                |
-| `❎` | Generate Title    | `generate.title();`             |
-| `❎` | Generate Name Tag | `generate.nametag();`           |
-| `❎` | Generate Group    | `generate.group();`             |
-| `❎` | Generate Language | `generate.language();`          |
-| `❎` | Generate Status   | `generate.status();`            |
-| `❎` | Generate TiKey    | `generate.tikey();`             |
-| `❎` | Generate TiDate   | `generate.tidate();`            |
-| `❎` | Generate Function Prototype | `generate.fnproto();` |
+| `❎` | Show Actions Key  | `alert( actions.key );`         |
+| `✅` | Generate Details  | `generate.details();`           |
+| `✅` | Generate ID       | `generate.id();`                |
+| `✅` | Generate Title    | `generate.title();`             |
+| `✅` | Generate Name Tag | `generate.nametag();`           |
+| `✅` | Generate Group    | `generate.group();`             |
+| `✅` | Generate Language | `generate.language();`          |
+| `✅` | Generate Status   | `generate.status();`            |
+| `✅` | Generate TiKey    | `generate.tikey();`             |
+| `✅` | Generate TiDate   | `generate.tidate();`            |
+| `✅` | Generate Function Prototype | `generate.fnproto();` |
 | …   | …                 | …                               |
 
 ----------------------------------------------------------------
@@ -348,7 +349,7 @@ ops.modules = [];
 
 // Schema = [ action, title ]
 ops.index = [
-  [ 'alert( action.key )'  , 'Show Action Key'    ]
+  [ 'alert( actions.key )' , 'Show Actions Key'   ]
 , [ "generate.details();"  , "Generate Details"   ]
 , [ "generate.id();"       , "Generate ID"        ]
 , [ "generate.title();"    , "Generate Title"     ]
@@ -368,7 +369,7 @@ man.details = function() {
     md . title    = ( document.title );
     md . origin   = ( location.href );
     md . version  = ( "1.0" );
-    md . revision = ( "0.0" );
+    md . revision = ( "0.1" );
     md . when     = ( new Date() ).toLocaleString();
     md . agent    = ( navigator.userAgent );
     md . tikey    = ( "3eb3b1d6-e56e-43b2-94f0-453012d39706" );
@@ -476,6 +477,7 @@ const fields = [
 , [ "tikey"    , tikey_input     ]
 , [ "tidate"   , tidate_input    ]
 , [ "code"     , code_editor     ]
+, [ "memo"     , memo_editor     ]
 , [ "actions"  , action_droplist ]
 , [ "action"   , action_input    ]
 , [ "param1"   , param1_input    ]
@@ -546,6 +548,16 @@ function nid( id, sep="-" ) {
     return [ "id", a, b ].join( sep );
 }
 
+function tigg() {
+	console.warn( "TODO ~ Finish tigg()" );
+    return "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+}
+
+function cooldate( dt ) {
+	console.warn( "TODO ~ Finish cooldate()" );
+	return "2026-MMM-DD";
+}
+
 function _todo() {
     alert( "This feature is incomplete" );
 };
@@ -590,11 +602,11 @@ generate.language = function() {
 };
 
 generate.tidate = function() {
-    tidate_input.value = "2026-MMM-DD"
+    tidate_input.value = cooldate();
 };
 
 generate.tikey = function() {
-    tikey_input.value = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+    tikey_input.value = tigg();
 };
 
 generate.fnproto  = function() {
