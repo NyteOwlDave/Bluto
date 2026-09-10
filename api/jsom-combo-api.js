@@ -142,20 +142,32 @@ message.mem = function() {
     return ( m );
 };
 
-message.inspect = function() {
-    const m = message.mem();
-    const t = "[ Message Methods ]";
+message.inspect = function( o, t ) {
+    let m;
+    if ( o instanceof Object ) {
+        m = Object.keys( o ).sort();
+        t = ( str( t ) || "Members" );
+    } else {
+        m = message.mem();
+        t = "Message Methods";
+    }
     const c = console;
     c.clear();
-    c.group( t );
+    c.group( `[ ${t} ]` );
     c.table( m );
     c.groupEnd();
 };
 
-message.hints = function() {
-    const m = message.mem();
-    const t = "[ Message Methods ]\n";
-    m . unshift( t );
+message.hints = function( o, t ) {
+    let m;
+    if ( o instanceof Object ) {
+        m = Object.keys( o ).sort();
+        t = ( str( t ) || "Members" );
+    } else {
+        m = message.mem();
+        t = "Message Methods";
+    }
+    m . unshift( `[ ${t} ]\n` );
     alert( m.join( "\n" ) );
 };
 
@@ -217,6 +229,21 @@ node.flash = function( o, cname, delay ) {
     const off =()=> { cl.remove( cname ); }
     cl.add( cname );
     setTimeout( off, delay );
+};
+
+node.nth = function( type, index, owner ) {
+    owner = ( owner || document );
+    type = str( type );
+    if (! type ) {
+        throw new TypeError(
+            "Expected a CSS Query or Node Name"
+        );
+    }
+    index = ( parseInt( index ) || 0 );
+    const m = arr(
+        owner.querySelectorAll( type )
+    );
+    return ( m[ index ] );
 };
 
 
@@ -298,6 +325,14 @@ function ned( ed ) {
     }
     return ( ed );
 }
+
+ned.all = function() {
+    return all( "TEXTAREA" );
+};
+
+ned.nth = function( index ) {
+    return ( all( "TEXTAREA" )[ index ] );
+};
 
 ned.section = function() {
     let section = (
@@ -587,7 +622,7 @@ populate_droplist.section = function() {
     if (! section ) {
         section = elx( "SECTION" );
         doc.body.appendChild( section );
-        section.id = "list_section";
+        section.id = "droplist_section";
     }
     return ( section );
 };

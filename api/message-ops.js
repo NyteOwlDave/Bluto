@@ -12,7 +12,6 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~[ Message Ops ]~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-
 function message( s ) {
     return (
         messages.textContent = str( s )
@@ -98,7 +97,8 @@ function say( s, ed ) {
     if ( ed ) {
         ed . value = ( s );
     } else {
-        dangit( `Can't find SOP Editor` );
+        console.warn( `Missing SOP Editor` );
+        blurt( s );
     }
 }
 
@@ -127,23 +127,37 @@ message.mem = function() {
     return ( m );
 };
 
-message.inspect = function() {
-    const m = message.mem();
-    const t = "[ Message Methods ]";
+message.inspect = function( o, t ) {
+    let m;
+    if ( o instanceof Object ) {
+        m = Object.keys( o ).sort();
+        t = ( str( t ) || "Members" );
+    } else {
+        m = message.mem();
+        t = "Message Methods";
+    }
     const c = console;
     c.clear();
-    c.group( t );
+    c.group( `[ ${t} ]` );
     c.table( m );
     c.groupEnd();
 };
 
-message.hints = function() {
-    const m = message.mem();
-    const t = "[ Message Methods ]\n";
-    m . unshift( t );
+message.hints = function( o, t ) {
+    let m;
+    if ( o instanceof Object ) {
+        m = Object.keys( o ).sort();
+        t = ( str( t ) || "Members" );
+    } else {
+        m = message.mem();
+        t = "Message Methods";
+    }
+    m . unshift( `[ ${t} ]\n` );
     alert( m.join( "\n" ) );
 };
 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ;
 ; console.log( `Loaded "message-ops.js" API Module` )
