@@ -189,6 +189,7 @@ suggestions = [
 , "jsom.id( 'd', 0, '+' )"
 , "jsom.lang( 'javascript', 0, '+' )"
 , "ned.fieldset( 'New Fieldset Gadget' )"
+, "message.hints()"
 ];
 </script>
 
