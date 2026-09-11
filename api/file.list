@@ -2,6 +2,7 @@ api.png
 bluto.png
 copy-ops.js
 copy-ops-todo.js
+explore.list
 explore.md
 express-lane.html
 favicon.ico
@@ -9,7 +10,10 @@ file.list
 folder.list
 gather-ops.js
 gideon-ops.js
+hello.js
 jsom-combo-api.js
+list-ops.js
 message-ops.js
+script.list
 tree.php
 zed-ops.js
