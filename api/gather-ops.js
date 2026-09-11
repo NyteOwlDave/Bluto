@@ -65,6 +65,28 @@ jsom.compose = function( scripts, dash="-" ) {
     return lines.join( sep );
 }
 
+jsom.acquire = function( url ) {
+    try {
+       const se = elx( "SCRIPT" );
+       const boo = doc.body;
+       boo.appendChild( se );
+       se.src = ( url );
+       return ( se );
+    } catch ( e ) {
+        console.error( e );
+        message( e.message );
+    }
+};
+
+jsom.acquire_psk = function( p, s, k ) {
+    p = ( str( p ) || "http://dave-omega" );
+    s = ( str( s ) || "app/bluto/api" );
+    k = ( str( k ) || "hello.js" );
+    u = [ p, s, k ].join( "/" );
+	return acquire( u );
+};
+
+
 ;
 ; console.log( `Loaded "gather-ops.js" API Module` )
 ;
