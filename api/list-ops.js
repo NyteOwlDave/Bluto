@@ -31,8 +31,6 @@ pcl.prep = function( o, sep="\n" ) {
     );
 };
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 function filter( o, rex ) {
     o = pcl( o );
     if ( rex = str( rex ) ) {
@@ -42,8 +40,6 @@ function filter( o, rex ) {
     }
     return ( o );
 };
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function seeker( rex, ed ) {
     const our =( k )=> (! iwm.includes( k ) );
@@ -57,8 +53,6 @@ function seeker( rex, ed ) {
     }
 };
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 function kahlan( o, rex, ed ) {
     const org =( k )=> ( iwm.includes( k ) );
     const m = Object.keys( window ).filter( org );
@@ -70,8 +64,6 @@ function kahlan( o, rex, ed ) {
         return ( v );
     }
 };
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function populate_list( items, owner ) {
     const ops = populate_list;
@@ -87,7 +79,7 @@ function populate_list( items, owner ) {
         const ce = elx( "LI" );
         owner.appendChild( ce );
         ce . textContent = (
-            ce . value = str( s );
+            ce . value = str( s )
         );
     };
     owner . innerHTML = "";
@@ -95,8 +87,6 @@ function populate_list( items, owner ) {
     items . forEach( add );
     return ( owner );
 };
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 populate_list.section = function() {
     let section = (
@@ -111,12 +101,10 @@ populate_list.section = function() {
     return ( section );
 };
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 function populate_droplist( items, owner ) {
     const ops = populate_droplist;
     if (! gad( owner ) ) {
-        owner = elx( SELECT" );
+        owner = elx( "SELECT" );
     }
     let parent = ( owner.parentElement );
     if (! parent ) {
@@ -127,7 +115,7 @@ function populate_droplist( items, owner ) {
         const ce = elx( "OPTION" );
         owner.appendChild( ce );
         ce . textContent = (
-            ce . value = str( s );
+            ce . value = str( s )
         );
     };
     owner . innerHTML = "";
@@ -136,17 +124,15 @@ function populate_droplist( items, owner ) {
     return ( owner );
 };
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 populate_droplist.section = function() {
     let section = (
-           gid( "list_section" )
-        || gid( "list-section" )
+           gid( "droplist_section" )
+        || gid( "droplist-section" )
     );
     if (! section ) {
         section = elx( "SECTION" );
         doc.body.appendChild( section );
-        section.id = "list_section";
+        section.id = "droplist_section";
     }
     return ( section );
 };
