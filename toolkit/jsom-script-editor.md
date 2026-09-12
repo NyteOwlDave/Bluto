@@ -20,6 +20,19 @@ td input {
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+[caspar]:         <http://tiny.cc/caspar-lives>
+[dorothy]:        <http://dave-omega/demo/web/dorothy-rockets.html>
+[desiree]:        <http://dave-omega/app/jarvis/toolkit/ncs/desiree/des-ii.html>
+[shirley]:        <http://dave-omega/app/sinkro/notes/rt/shirley.html>
+[athena]:         <https://nyteowldave.neocities.org/>
+[calliope]:       <http://dave-omega/app/calliope/www/calliope/decal-sources.html>
+[json-editor]:    <http://dave-omega/venus/json-tree-editor.html>
+[session-editor]: <https://nyteowldave.github.io/notes/session-editor.html>
+[np-coordinator]: <https://nyteowldave.github.io/notes/mynotepad-coordinator.html>
+[tigg]:           <https://nyteowldave.github.io/tigg/>
+[venus]:          <https://nyteowldave.github.io/venus/>
+[snek]:           <https://nyteowldave.github.io/snek.html>
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 [me-omega]:
@@ -32,6 +45,7 @@ td input {
 
 > [Omega][me-omega]
 > [JSOM DevOps](./jsom-devops.html)
+> [Express Lane](./express-lane.html)
 > [File System](./)
 
 ----------------------------------------------------------------
@@ -71,6 +85,24 @@ td input {
 |-----------|--------------------------------------------|
 | index     | <input readonly="true" id="index_input" /> |
 | count     | <input readonly="true" id="count_input" /> |
+
+----------------------------------------------------------------
+
+# Toolkit
+
+> [Caspar][caspar]
+> [Dorothy][dorothy]
+> [Desiree][desiree]
+> [Shirley][shirley]
+> [Snek][snek]
+> [Venus][venus]
+> [Athena][athena]
+> [Calliope][calliope]
+
+> [Notepad Coordinator][np-coordinator]
+> [Session Editor][session-editor]
+> [JSON Tree Editor][json-editor]
+> [TiGG][tigg]
 
 ----------------------------------------------------------------
 
