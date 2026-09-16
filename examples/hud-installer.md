@@ -4,6 +4,8 @@
 @import url("https://nyteowldave.neocities.org/style.css");
 </style>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <style>
 .ghost {
     position : fixed;
@@ -13,6 +15,8 @@
     opacity  : 0;
 }
 </style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <style>
 .flashing {
@@ -32,6 +36,8 @@
     }
 }
 </style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <style>
 body {
@@ -56,6 +62,10 @@ body {
 [me-omega]:
 <http://dave-omega/app/bluto/examples/hud-installer.html>
 "Omega Edition"
+
+[me-Tower]:
+<http://dave-tower/app/bluto/examples/hud-installer.html>
+"Tower Edition"
 
 ----------------------------------------------------------------
 
@@ -123,6 +133,71 @@ https://nyteowldave.neocities.org/style.css
 
 ----------------------------------------------------------------
 
+# Optional Features
+
+----------------------------------------------------------------
+
+## API Modules
+
+```hal
+https://nyteowldave.github.io/std/api/bluto/jsom-combo-api.js
+```
+
+<!-- IMPORTANT : menu class is Required! -->
+<div center class="menu">
+  <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+----------------------------------------------------------------
+
+```hal
+https://nyteowldave.github.io/std/api/bluto/copy-ops.js
+https://nyteowldave.github.io/std/api/bluto/gather-ops.js
+https://nyteowldave.github.io/std/api/bluto/gideon-ops.js
+https://nyteowldave.github.io/std/api/bluto/list-ops.js
+https://nyteowldave.github.io/std/api/bluto/message-ops.js
+https://nyteowldave.github.io/std/api/bluto/zed-ops.js
+```
+
+<!-- IMPORTANT : menu class is Required! -->
+<div center class="menu">
+  <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+----------------------------------------------------------------
+
+> NOTE : `jsom-combo-api` includes all of the above
+
+----------------------------------------------------------------
+
+## Gems
+
+```hal
+https://nyteowldave.github.io/std/api/bluto/gems/acquire.js
+https://nyteowldave.github.io/std/api/bluto/gems/describe.js
+https://nyteowldave.github.io/std/api/bluto/gems/docify.js
+https://nyteowldave.github.io/std/api/bluto/gems/list-to-datalist.js
+https://nyteowldave.github.io/std/api/bluto/gems/suggestions.js
+```
+
+<!-- IMPORTANT : menu class is Required! -->
+<div center class="menu">
+  <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+----------------------------------------------------------------
+
+> NOTE : `docify` includes `describe`
+
+----------------------------------------------------------------
+
+> [Omega][me-omega]
+> [Tower][me-tower]
+> [Bluto Menu](./../bluto-menu.html)
+> [File System](./)
+
+----------------------------------------------------------------
+
 <footer if="footer">
   <input id="footer_input" onchange="perform( event )" />
 </footer>
@@ -138,12 +213,6 @@ function suggest( s ) {
     footer_input.value = ( s );
 }
 </script>
-
-----------------------------------------------------------------
-
-> [Omega][me-omega]
-> [Bluto Menu](./../bluto-menu.html)
-> [File System](./)
 
 ----------------------------------------------------------------
 
@@ -189,6 +258,14 @@ function suggest( s ) {
 </script>
 
 <script src="https://nyteowldave.github.io/std/api/install.js">
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script src="./../api/gems/docify.js"></script>
+
+<script>
+console.warn( "TODO ~ Remove FSO Module Dependencies" );
 </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -291,6 +368,8 @@ function test_ghost_editor() {
 }
 </script>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <script id="node.js" group="GideonOps" status="working">
 function node( type, id, cname, owner ) {
     const ge = elx( str( type ) );
@@ -313,7 +392,6 @@ function node( type, id, cname, owner ) {
     return ( ge );
 }
 </script>
-
 
 <script id="node-flash.js" group="GideonOps" status="working">
 node.flash = function( o, cname, delay ) {

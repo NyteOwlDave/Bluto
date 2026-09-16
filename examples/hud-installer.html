@@ -18,6 +18,8 @@ img { max-width: 100%; }
 @import url("https://nyteowldave.neocities.org/style.css");
 </style>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <style>
 .ghost {
     position : fixed;
@@ -27,6 +29,8 @@ img { max-width: 100%; }
     opacity  : 0;
 }
 </style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <style>
 .flashing {
@@ -46,6 +50,8 @@ img { max-width: 100%; }
     }
 }
 </style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <style>
 body {
@@ -107,6 +113,58 @@ https://nyteowldave.github.io/std/api/install.js
 </div>
 
 <hr>
+<h1>Optional Features</h1>
+<hr>
+<h2>API Modules</h2>
+<pre><code class="language-hal">https://nyteowldave.github.io/std/api/bluto/jsom-combo-api.js
+</code></pre>
+<!-- IMPORTANT : menu class is Required! -->
+<div center class="menu">
+  <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+<hr>
+<pre><code class="language-hal">https://nyteowldave.github.io/std/api/bluto/copy-ops.js
+https://nyteowldave.github.io/std/api/bluto/gather-ops.js
+https://nyteowldave.github.io/std/api/bluto/gideon-ops.js
+https://nyteowldave.github.io/std/api/bluto/list-ops.js
+https://nyteowldave.github.io/std/api/bluto/message-ops.js
+https://nyteowldave.github.io/std/api/bluto/zed-ops.js
+</code></pre>
+<!-- IMPORTANT : menu class is Required! -->
+<div center class="menu">
+  <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+<hr>
+<blockquote>
+<p>NOTE : <code>jsom-combo-api</code> includes all of the above</p>
+</blockquote>
+<hr>
+<h2>Gems</h2>
+<pre><code class="language-hal">https://nyteowldave.github.io/std/api/bluto/gems/acquire.js
+https://nyteowldave.github.io/std/api/bluto/gems/describe.js
+https://nyteowldave.github.io/std/api/bluto/gems/docify.js
+https://nyteowldave.github.io/std/api/bluto/gems/list-to-datalist.js
+https://nyteowldave.github.io/std/api/bluto/gems/suggestions.js
+</code></pre>
+<!-- IMPORTANT : menu class is Required! -->
+<div center class="menu">
+  <button onclick="copy_above_preview(event)">Copy</button>
+</div>
+
+<hr>
+<blockquote>
+<p>NOTE : <code>docify</code> includes <code>describe</code></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><a href="http://dave-omega/app/bluto/examples/hud-installer.html" title="Omega Edition">Omega</a>
+<a href="http://dave-tower/app/bluto/examples/hud-installer.html" title="Tower Edition">Tower</a>
+<a href="./../bluto-menu.html">Bluto Menu</a>
+<a href="./">File System</a></p>
+</blockquote>
+<hr>
 <footer if="footer">
   <input id="footer_input" onchange="perform( event )" />
 </footer>
@@ -123,12 +181,6 @@ function suggest( s ) {
 }
 </script>
 
-<hr>
-<blockquote>
-<p><a href="http://dave-omega/app/bluto/examples/hud-installer.html" title="Omega Edition">Omega</a>
-<a href="./../bluto-menu.html">Bluto Menu</a>
-<a href="./">File System</a></p>
-</blockquote>
 <hr>
 <script id="iwm.js" group="Prolog" status="working">
 ;
@@ -172,6 +224,14 @@ function suggest( s ) {
 </script>
 
 <script src="https://nyteowldave.github.io/std/api/install.js">
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script src="./../api/gems/docify.js"></script>
+
+<script>
+console.warn( "TODO ~ Remove FSO Module Dependencies" );
 </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -273,6 +333,8 @@ function test_ghost_editor() {
     }
 }
 </script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <script id="node.js" group="GideonOps" status="working">
 function node( type, id, cname, owner ) {
