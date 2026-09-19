@@ -16,6 +16,10 @@ td input {
     display : inline-block;
     width   : inherit;
 }
+td sup {
+    padding : 0px 3px;
+    color   : crimson;
+}
 </style>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -44,7 +48,10 @@ td input {
 # JSOM Script Editor
 
 > [Omega][me-omega]
+
 > [JSOM DevOps](./jsom-devops.html)
+> [JSOM Downloads](./jsom-downloads.html)
+
 > [Express Lane](./express-lane.html)
 > [File System](./)
 
@@ -52,10 +59,10 @@ td input {
 
 ## Script Details
 
-| Property  | Value |
+| Property  | Value                                  |
 |-----------|----------------------------------------|
-| id        | <input id="id_input" />                |
-| title     | <input id="title_input" />             |
+| id        | <input id="id_input" /><sup>*</sup>    |
+| title     | <input id="title_input" /><sup>*</sup> |
 | nametag   | <input id="nametag_input" />           |
 | group     | <input id="group_input" />             |
 | lang      | <input id="lang_input" />              |
@@ -126,26 +133,28 @@ td input {
 
 | `✅` | Title             | Action |
 |------|-------------------|---------------------------------|
-| `❎` | Show Actions Key  | `alert( actions.key );`         |
-| `✅` | Generate Details  | `generate.details();`           |
-| `✅` | Generate ID       | `generate.id();`                |
-| `✅` | Generate Title    | `generate.title();`             |
-| `✅` | Generate Name Tag | `generate.nametag();`           |
-| `✅` | Generate Group    | `generate.group();`             |
-| `✅` | Generate Language | `generate.language();`          |
-| `✅` | Generate Status   | `generate.status();`            |
-| `✅` | Generate TiKey    | `generate.tikey();`             |
-| `✅` | Generate TiDate   | `generate.tidate();`            |
-| `✅` | Generate Function Prototype | `generate.fnproto();` |
-| …   | …                 | …                               |
+| `❎` | Show Actions Key   | `alert( actions.key );`         |
+| `❎` | Compose Manuscript | `manuscript.compose();`         |
+| `✅` | Generate Details   | `generate.details();`           |
+| `✅` | Generate ID        | `generate.id();`                |
+| `✅` | Generate Title     | `generate.title();`             |
+| `✅` | Generate Name Tag  | `generate.nametag();`           |
+| `✅` | Generate Group     | `generate.group();`             |
+| `✅` | Generate Language  | `generate.language();`          |
+| `✅` | Generate Status    | `generate.status();`            |
+| `❎` | Generate TiKey     | `generate.tikey();`             |
+| `❎` | Generate TiDate    | `generate.tidate();`            |
+| `✅` | Generate Function Prototype | `generate.fnproto();`  |
+| …   | …                 | …                                |
 
 ----------------------------------------------------------------
 
 ## Remarks
 
-This is a brand new tool for managing Gems and Peaches.
+This is a brand new tool for managing __Gems__ and __Peaches__.
 
-It's part of the JSOM DevOps Toolkit, which is part of Bluto.
+It's part of the __JSOM DevOps Toolkit__, which is part of
+__Bluto__.
 
 ----------------------------------------------------------------
 
@@ -356,6 +365,18 @@ function suggest( s ) {
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <script>
+manuscript = {};
+</script>
+
+<script>
+manuscript.compose = function() {
+    throw new Error( "TODO!" );
+};
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
 actions = {};
 </script>
 
@@ -383,6 +404,7 @@ ops.modules = [];
 // Schema = [ action, title ]
 ops.index = [
   [ 'alert( actions.key )' , 'Show Actions Key'   ]
+, [ 'manuscript.compose()' , 'Compose Manuscript' ]
 , [ "generate.details();"  , "Generate Details"   ]
 , [ "generate.id();"       , "Generate ID"        ]
 , [ "generate.title();"    , "Generate Title"     ]
@@ -432,9 +454,13 @@ man.parse = function( json ) {
     }
 };
 
-ops.persist = function() {};
+ops.persist = function() {
+    console.warn( "TODO! actions.persist()" );
+};
 
-ops.recover = function() {};
+ops.recover = function() {
+    console.warn( "TODO! actions.recover()" );
+};
 
 const pop = ( ops.populate = {} );
 
@@ -489,12 +515,14 @@ mod.peek = function( index ) {
 mod.read = function( index ) {
     const details = mod.peek( index );
     if ( details instanceof Object ) {
+        throw new Error( "TODO!" );
     } else {
         invalid_index( index );
     }
 };
 
 mod.write = function( index ) {
+    throw new Error( "TODO!" );
 };
 
 const table = ( ops.table = {} );

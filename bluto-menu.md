@@ -31,6 +31,8 @@
 - [HUD Installer Example](./examples/hud-installer.html)
 - [Icon Viewer](./icons/icons-view.html)
 - [JSOM DevOps Tool](./toolkit/jsom-devops.html)
+- [JSOM Script Editor](./toolkit/jsom-script-editor.html)
+- [JSOM Downloads](./toolkit/jsom-downloads.html)
 
 ----------------------------------------------------------------
 

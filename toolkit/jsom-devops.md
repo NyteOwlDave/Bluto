@@ -24,6 +24,7 @@
 > [Bluto Menu](./../bluto-menu.html)
 
 > [JSOM Script Editor](./jsom-script-editor.html)
+> [JSOM Downloads](./jsom-downloads.html)
 
 > [File System](./)
 
@@ -107,13 +108,19 @@ http://dave-omega/app/bluto/style/jsom-devops.css
 Individual embedded __Modules__ (`SCRIPT` elements) are grouped
 by purpose or domain of concern.
 
-The JSON Combo API has been segmented according to these
+The __JSON Combo API__ has been segmented according to these
 group rules.
 
-Here's a list of the Group Names and the associate File Names.
-Be aware that this individual files are duplicate code. The
-Combo API is considered the official code base. All smaller
+Here's a list of the __Group Names__ and the associates 
+__File Names__.
+
+Be aware that these individual files are duplicate code. The
+__Combo API__ is considered the official code base. All smaller
 files should be kept consistent with this file.
+
+The code base is also mirrored on the __Morpheus__ site, which
+must also be synchronized with any changes to __Bluto__'s
+version.
 
 ----------------------------------------------------------------
 
@@ -134,6 +141,18 @@ files should be kept consistent with this file.
 |-------------------|------------|----------------------|
 | jsom-combo-api.js | JsomOps    | All Modules Combined |
 | copy-ops-todo.js  | CopyOps    | Unfinished Code      |
+
+----------------------------------------------------------------
+
+## Gem Modules
+
+| File Name           | Description |
+|---------------------|---------------------------------|
+| acquire.js          | Import API Module or Stylesheet |
+| describe.js         | Provide Object Details          |
+| docify.js           | Provide Extended Object Details |
+| list-to-datalist.js | Create DATALIST from UL         |
+| suggestions.js      | Footer Input Suggestions        |
 
 ----------------------------------------------------------------
 
@@ -249,7 +268,7 @@ suggestions = [
   "install('hud')"
 , "jsom('status','untested',0,'+')"
 , "jsom.status('working',0,'+')"
-, "jsom.group('GatherOps',0,'+)"
+, "jsom.group('GatherOps',0,'+')"
 , "jsom.name('Named Script',0,'+')"
 , "jsom.id('d',0,'+')"
 , "jsom.lang('javascript',0,'+')"

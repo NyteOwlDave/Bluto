@@ -27,7 +27,8 @@ img { max-width: 100%; }
 <blockquote>
 <p><a href="http://dave-omega/app/bluto/toolkit/jsom-devops.html" title="Omega Edition">Omega</a>
 <a href="./../bluto-menu.html">Bluto Menu</a></p>
-<p><a href="./jsom-script-editor.html">JSOM Script Editor</a></p>
+<p><a href="./jsom-script-editor.html">JSOM Script Editor</a>
+<a href="./jsom-downloads.html">JSOM Downloads</a></p>
 <p><a href="./">File System</a></p>
 </blockquote>
 <hr>
@@ -88,12 +89,16 @@ http://dave-omega/app/bluto/style/jsom-devops.css
 <h1>Module Groups</h1>
 <p>Individual embedded <strong>Modules</strong> (<code>SCRIPT</code> elements) are grouped
 by purpose or domain of concern.</p>
-<p>The JSON Combo API has been segmented according to these
+<p>The <strong>JSON Combo API</strong> has been segmented according to these
 group rules.</p>
-<p>Here's a list of the Group Names and the associate File Names.
-Be aware that this individual files are duplicate code. The
-Combo API is considered the official code base. All smaller
+<p>Here's a list of the <strong>Group Names</strong> and the associates 
+<strong>File Names</strong>.</p>
+<p>Be aware that these individual files are duplicate code. The
+<strong>Combo API</strong> is considered the official code base. All smaller
 files should be kept consistent with this file.</p>
+<p>The code base is also mirrored on the <strong>Morpheus</strong> site, which
+must also be synchronized with any changes to <strong>Bluto</strong>'s
+version.</p>
 <hr>
 <table>
 <thead>
@@ -156,6 +161,38 @@ files should be kept consistent with this file.</p>
 <td>copy-ops-todo.js</td>
 <td>CopyOps</td>
 <td>Unfinished Code</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Gem Modules</h2>
+<table>
+<thead>
+<tr>
+<th>File Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acquire.js</td>
+<td>Import API Module or Stylesheet</td>
+</tr>
+<tr>
+<td>describe.js</td>
+<td>Provide Object Details</td>
+</tr>
+<tr>
+<td>docify.js</td>
+<td>Provide Extended Object Details</td>
+</tr>
+<tr>
+<td>list-to-datalist.js</td>
+<td>Create DATALIST from UL</td>
+</tr>
+<tr>
+<td>suggestions.js</td>
+<td>Footer Input Suggestions</td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +306,7 @@ suggestions = [
   "install('hud')"
 , "jsom('status','untested',0,'+')"
 , "jsom.status('working',0,'+')"
-, "jsom.group('GatherOps',0,'+)"
+, "jsom.group('GatherOps',0,'+')"
 , "jsom.name('Named Script',0,'+')"
 , "jsom.id('d',0,'+')"
 , "jsom.lang('javascript',0,'+')"

@@ -30,6 +30,10 @@ td input {
     display : inline-block;
     width   : inherit;
 }
+td sup {
+    padding : 0px 3px;
+    color   : crimson;
+}
 </style>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -39,9 +43,10 @@ td input {
 <hr>
 <h1>JSOM Script Editor</h1>
 <blockquote>
-<p><a href="http://dave-omega/app/bluto/toolkit/jsom-script-editor.html" title="Omega Edition">Omega</a>
-<a href="./jsom-devops.html">JSOM DevOps</a>
-<a href="./express-lane.html">Express Lane</a>
+<p><a href="http://dave-omega/app/bluto/toolkit/jsom-script-editor.html" title="Omega Edition">Omega</a></p>
+<p><a href="./jsom-devops.html">JSOM DevOps</a>
+<a href="./jsom-downloads.html">JSOM Downloads</a></p>
+<p><a href="./express-lane.html">Express Lane</a>
 <a href="./">File System</a></p>
 </blockquote>
 <hr>
@@ -56,11 +61,11 @@ td input {
 <tbody>
 <tr>
 <td>id</td>
-<td><input id="id_input" /></td>
+<td><input id="id_input" /><sup>*</sup></td>
 </tr>
 <tr>
 <td>title</td>
-<td><input id="title_input" /></td>
+<td><input id="title_input" /><sup>*</sup></td>
 </tr>
 <tr>
 <td>nametag</td>
@@ -194,6 +199,11 @@ td input {
 <td><code>alert( actions.key );</code></td>
 </tr>
 <tr>
+<td><code>❎</code></td>
+<td>Compose Manuscript</td>
+<td><code>manuscript.compose();</code></td>
+</tr>
+<tr>
 <td><code>✅</code></td>
 <td>Generate Details</td>
 <td><code>generate.details();</code></td>
@@ -229,12 +239,12 @@ td input {
 <td><code>generate.status();</code></td>
 </tr>
 <tr>
-<td><code>✅</code></td>
+<td><code>❎</code></td>
 <td>Generate TiKey</td>
 <td><code>generate.tikey();</code></td>
 </tr>
 <tr>
-<td><code>✅</code></td>
+<td><code>❎</code></td>
 <td>Generate TiDate</td>
 <td><code>generate.tidate();</code></td>
 </tr>
@@ -252,8 +262,9 @@ td input {
 </table>
 <hr>
 <h2>Remarks</h2>
-<p>This is a brand new tool for managing Gems and Peaches.</p>
-<p>It's part of the JSOM DevOps Toolkit, which is part of Bluto.</p>
+<p>This is a brand new tool for managing <strong>Gems</strong> and <strong>Peaches</strong>.</p>
+<p>It's part of the <strong>JSOM DevOps Toolkit</strong>, which is part of
+<strong>Bluto</strong>.</p>
 <hr>
 <footer if="footer">
   <input id="footer_input" onchange="perform( event )" />
@@ -461,6 +472,18 @@ function suggest( s ) {
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <script>
+manuscript = {};
+</script>
+
+<script>
+manuscript.compose = function() {
+    throw new Error( "TODO!" );
+};
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
 actions = {};
 </script>
 
@@ -488,6 +511,7 @@ ops.modules = [];
 // Schema = [ action, title ]
 ops.index = [
   [ 'alert( actions.key )' , 'Show Actions Key'   ]
+, [ 'manuscript.compose()' , 'Compose Manuscript' ]
 , [ "generate.details();"  , "Generate Details"   ]
 , [ "generate.id();"       , "Generate ID"        ]
 , [ "generate.title();"    , "Generate Title"     ]
@@ -537,9 +561,13 @@ man.parse = function( json ) {
     }
 };
 
-ops.persist = function() {};
+ops.persist = function() {
+    console.warn( "TODO! actions.persist()" );
+};
 
-ops.recover = function() {};
+ops.recover = function() {
+    console.warn( "TODO! actions.recover()" );
+};
 
 const pop = ( ops.populate = {} );
 
@@ -594,12 +622,14 @@ mod.peek = function( index ) {
 mod.read = function( index ) {
     const details = mod.peek( index );
     if ( details instanceof Object ) {
+        throw new Error( "TODO!" );
     } else {
         invalid_index( index );
     }
 };
 
 mod.write = function( index ) {
+    throw new Error( "TODO!" );
 };
 
 const table = ( ops.table = {} );
