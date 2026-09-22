@@ -102,6 +102,23 @@ More details are located in the [Tick Tick Tool][tick-tick].
 
 ----------------------------------------------------------------
 
+# NEW!
+
+The __HUD Gadget__ has become so essential that I decided to
+create a stand-alone __Web App__.
+
+[hud-gas]:   <https://nyteowldave.github.io/dot/hud-app.html>
+[hud-omega]: <http://dave-omega/app/hud/hud.html>
+[hud-tower]: <http://dave-tower/app/hud/hud-mirrors.html>
+
+There are currently Three Providers:
+
+- [Google App Scripts][hud-gas]
+- [HUD App ~ Omega][hud-omega]
+- [HUD Mirrors ~ Tower][hud-tower]
+
+----------------------------------------------------------------
+
 # Requirements
 
 ----------------------------------------------------------------
@@ -262,11 +279,7 @@ function suggest( s ) {
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<script src="./../api/gems/docify.js"></script>
-
-<script>
-console.warn( "TODO ~ Remove FSO Module Dependencies" );
-</script>
+<script src="https://nyteowldave.github.io/std/api/gems/docify.js"></script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
