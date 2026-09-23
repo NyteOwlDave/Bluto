@@ -268,14 +268,9 @@ function suggest( s ) {
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<script src="https://nyteowldave.github.io/std/api/gems/prolog-beta.js">
-</script>
-
-<script src="https://nyteowldave.github.io/std/api/gems/interpreter-lite.js">
-</script>
-
-<script src="https://nyteowldave.github.io/std/api/install.js">
-</script>
+<script src="https://nyteowldave.github.io/std/api/gems/prolog-beta.js"></script>
+<script src="https://nyteowldave.github.io/std/api/gems/interpreter-lite.js"></script>
+<script src="https://nyteowldave.github.io/std/api/install.js"></script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
