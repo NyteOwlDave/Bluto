@@ -193,6 +193,7 @@ https://nyteowldave.github.io/std/api/bluto/zed-ops.js
 https://nyteowldave.github.io/std/api/bluto/gems/acquire.js
 https://nyteowldave.github.io/std/api/bluto/gems/describe.js
 https://nyteowldave.github.io/std/api/bluto/gems/docify.js
+https://nyteowldave.github.io/std/api/bluto/gems/otree.js
 https://nyteowldave.github.io/std/api/bluto/gems/list-to-datalist.js
 https://nyteowldave.github.io/std/api/bluto/gems/suggestions.js
 ```
