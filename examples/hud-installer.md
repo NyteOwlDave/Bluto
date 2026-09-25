@@ -57,6 +57,14 @@ body {
 <https://ticktick.com/webapp/#p/6a99f28e8f086b72edb5a98b/tasks>
 "Project Notes ~ Tick-Tick"
 
+[hud-wksp-omega]:
+<http://dave-omega/app/hud/>
+"Omega Edition"
+
+[hud-wksp-tower]:
+<http://dave-tower/app/hud/>
+"Tower Edition"
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 [me-omega]:
@@ -98,7 +106,13 @@ within the `std/api` folder.
 
 # Further Reading
 
-More details are located in the [Tick Tick Tool][tick-tick].
+Much more is available in the __HUD Workspaces__:
+
+> [HUD Omega][hud-wksp-omega]
+> [HUD Tower][hud-wksp-tower]
+
+Project Management details are located in
+the [Tick Tick Tool][tick-tick].
 
 ----------------------------------------------------------------
 
@@ -107,15 +121,22 @@ More details are located in the [Tick Tick Tool][tick-tick].
 The __HUD Gadget__ has become so essential that I decided to
 create a stand-alone __Web App__.
 
+[omega-snippets]:
+<http://dave-omega/app/hud/assets/snippet/hud-snippets.html>
+
 [hud-gas]:   <https://nyteowldave.github.io/dot/hud-app.html>
 [hud-omega]: <http://dave-omega/app/hud/hud.html>
 [hud-tower]: <http://dave-tower/app/hud/hud-mirrors.html>
 
-There are currently Three Providers:
+There are currently three __Providers__:
 
-- [Google App Scripts][hud-gas]
-- [HUD App ~ Omega][hud-omega]
-- [HUD Mirrors ~ Tower][hud-tower]
+- [Google App Scripts][hud-gas] ~ HUD App v2.20g
+- [Omega][hud-omega] ~ HUD App v2.14
+- [Tower][hud-tower] ~ HUD Mirrors
+
+For more advanced __Snippets__:
+
+- [HUD Snippets][omega-snippets]
 
 ----------------------------------------------------------------
 
@@ -142,7 +163,9 @@ https://nyteowldave.github.io/std/api/install.js
 
 ```hal
 https://nyteowldave.neocities.org/style.css
+https://nyteowldave.github.io/std/style/hud.css
 ```
+
 <!-- IMPORTANT : menu class is Required! -->
 <div center class="menu">
   <button onclick="copy_above_preview(event)">Copy</button>

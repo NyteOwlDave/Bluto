@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style type="text/css">
+td, th { border: 1px solid #c3c3c3; padding: 0 3px 0 3px; }
+table { border-collapse: collapse; }
+img { max-width: 100%; }
+</style>
+<meta name="generator" content="ReText 7.2.3">
+<title>interesting-keys</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+<style>
+@import url("https://nyteowldave.neocities.org/style.css");
+</style>
+
+<style>
+.ghost {
+    position : fixed;
+    left     : -2000px;
+    width    : 2px;
+    height   : 2px;
+    opacity  : 0;
+}
+</style>
+
+<style>
+.wide {
+    width : calc( 100vw - 200px ) !important;
+}
+</style>
+
+<style>
+.maximus {
+    box-sizing : border-box;
+    position   : fixed;
+    left       : 1px;
+    top        : 65px;
+    min-height : 10ch;
+    min-height : calc( 100vh - 116px );
+    max-height : calc( 100vh - 116px );
+    min-width  : calc( 100vw - 18px  );
+    max-width  : calc( 100vw - 18px  );
+    overflow   : scroll;
+    outline    : none;
+    resize     : none;
+    background : mintcream;
+    color      : #080822;
+    tab-size   : 4;
+    font       : 14pt monospace;
+}
+</style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<header id="header">
+ <div id="_T_"> Interesting Store Keys </div>
+ <div id="messages"></div>
+</header>
+
+<footer id="footer">
+  <input id="footer_input" class="wide" onchange="perform(event)" />
+  <span class="dot" onclick="hud()">X</span>
+</footer>
+
+<section class="ghost">
+  <a id="ghost_anchor"></a>
+  <textarea id="ghost_editor"></textarea>
+  <input type="file" id="ghost_input" />
+</section>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<textarea class="maximus" id="maximus" wrap="off">
+</textarea>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+; iwm = Object.keys( window ).sort()
+</script>
+
+<script>
+; doc = document
+; doc . title = ( _T_.textContent ).trim()
+</script>
+
+<script>
+; cls =()=> console.clear()
+</script>
+
+<script>
+; wop =( u )=> ( window.open( u, u ) )
+; agn =(   )=> ( location.reload() )
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script src="https://nyteowldave.github.io/std/api/gems/prolog-beta.js"></script>
+<script src="https://nyteowldave.github.io/std/api/hud.js"></script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script src="https://nyteowldave.github.io/std/api/bluto/message-ops.js"></script>
+
+<script src="https://nyteowldave.github.io/std/api/bluto/gems/acquire.js"></script>
+<script src="https://nyteowldave.github.io/std/api/bluto/gems/docify.js"></script>
+<script src="https://nyteowldave.github.io/std/api/bluto/gems/otree.js"></script>
+<script src="https://nyteowldave.github.io/std/api/bluto/gems/suggestions.js"></script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+function crashed( e ) {
+    window.alert(e);
+    console.error(e);
+}
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+function perform( event ) {
+    const ops = perform;
+    ops.error = ( "" );
+    try {
+        const ie = event.target;
+        const js = ( ie.value ).trim();
+        if ( js ) {
+            ops.recent.add( js );
+            window.eval( js );
+        }
+    } catch ( e ) {
+        ops.error = ( e.message );
+        crashed ( e );
+    }
+}
+;
+; perform.recent = ( new Set() )
+;
+perform.review = function() {
+    const ops = perform;
+    const a = Array.from( ops.recent ).sort();
+    maximus.value = a.join( "\n" );
+};
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+
+function pcl( o, sep="\n" ) {
+    o = pcl.prepare( o, sep );
+    return (
+        ( o )
+        . map( str )
+        . filter( ( s ) => ( s ) )
+    );
+}
+
+pcl.prepare = function( o, sep="\n" ) {
+    if ( o instanceof Object ) {
+        if ( Array.isArray( o ) ) {
+            return ( o ).map( str );
+        }
+        return Object.keys( o ).sort();
+    }
+    o = String( o );
+    return ( o ).split( sep );
+};
+
+function filter( o, rex ) {};
+
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+function peek( index ) {}
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+function list( rex ) {
+    const s = interesting_keys;
+    const m = filter( s, rex );
+    maximus.value = m.join( "\n" );
+}
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+interesting_keys = ( `
+append-hud.js
+canedit.js
+chronos.js
+desiree-tree-to-list.js
+dorothy-rockets.json
+download()
+fusion-drive-table.html
+heads-up-editor.js
+hud-omega-notes.js
+hud-peach-summary.json
+hud-seeker.js
+hud-snippets.js
+jarvis-misc-notes.json
+jarvis-style-table-0.json
+legends-helper.js
+legends-manifest.json
+legends.cdoc
+link_table
+lissajous-viewer.js
+list-modules.js
+lizzajous-demo.js
+make-elmer-table.js
+merge-hud-notes.js
+my-notepad-jarvis.json
+my-notepad-v1p0.json
+norma-remarks.json
+oscillate-message.js
+prolog-glossary.html
+ramdisk-rt-notes.json
+ramdisk-rt-now-dave-omega.json
+regi-index.json
+save-sip.js
+save-store.js
+server-entry-counts.json
+store-analyst.js
+tigg-veer-helper.js
+tikey-database-v1p0.json
+toroid-lumina-demo.js
+vcr_text_entries
+venus-session.json
+venus_version.list
+whiteboard-title.list
+🧩 SIP Hotkey Codes
+` );
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+</body>
+</html>
