@@ -1,0 +1,13 @@
+
+/*
+	ghost.css
+	Bluto Styles
+*/
+
+.ghost {
+    position : fixed;
+    left     : -2000px;
+    width    : 1px;
+    height   : 1px;
+    opacity  : 0;
+}

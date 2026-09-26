@@ -4,19 +4,24 @@
 @import url("https://nyteowldave.neocities.org/style.css");
 </style>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <style>
-.ghost {
-    position : fixed;
-    left     : -2000px;
-    width    : 1px;
-    height   : 1px;
-    opacity  : 0;
-}
+@import url("./../style/ghost.css");
 </style>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+[me-tower]:
+<http://dave-tower/app/bluto/api/bluto-dialog-test.html>
+"Tower Edition"
 
 ----------------------------------------------------------------
 
 <h1 id="_T_"> Bluto Dialog Test </h1>
+
+> [Tower][me-tower]
+> [File System](./)
 
 ----------------------------------------------------------------
 
@@ -53,7 +58,7 @@ Both Dialogs' JS and CSS is now accessible via Morpheus.
 
 <script id="doc.js">
 ; doc = document
-; doc . title = ( _T_.textContetx ).trim()
+; doc . title = ( _T_.textContent ).trim()
 </script>
 
 <script id="debug.js">
@@ -83,7 +88,11 @@ Both Dialogs' JS and CSS is now accessible via Morpheus.
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!--
 <script src="./gems/bluto-dialog.js"></script>
+-->
+
+<script src="https://nyteowldave.github.io/std/api/bluto/gems/bluto-dialog.js"></script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
@@ -91,6 +100,29 @@ Both Dialogs' JS and CSS is now accessible via Morpheus.
 <script src="http://dave-tower/app/hud/api/gems/seeker.js"></script>
 <script src="http://dave-tower/app/hud/api/gems/visit.js"></script>
 <script src="http://dave-tower/app/hud/api/gems/hud-jimbo.js"></script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+function main( event ) {
+	try {
+		if ( "function" === typeof create_dlg ) {
+			announce( "Ready for Action, Jack!" );
+			suggest( "create_dlg('My Dialog')" );
+		} else {
+			dangit( "Failed to load Dialog API Module" );
+			suggest( "location.reload()" );
+		}
+	} catch ( e ) {
+		console.error( e );
+		alert ( e );
+	}
+}
+</script>
+
+<script>
+addEventListener( "load", main );
+</script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 

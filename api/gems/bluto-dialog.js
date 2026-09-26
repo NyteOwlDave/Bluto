@@ -1,7 +1,11 @@
 
 /*
+
 	bluto-dialog.js
     bluto-dialog.css
+
+	SEE : Pubs Checklist (RTJ / Tower)
+
 */
 
 ;
